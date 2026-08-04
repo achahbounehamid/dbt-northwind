@@ -4,7 +4,7 @@ sources:
   - name: northwind
     schema: public
     database: northwind
-    description: "Données brutes issues de PostgreSQL"
+    description: "Source de données brutes PostgreSQL Northwind"
     tables:
       - name: customers
       - name: orders

@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: northwind
+    schema: public
+    database: northwind
+    description: "Données brutes issues de PostgreSQL"
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_details
+      - name: products
+      - name: categories
+      - name: suppliers
+      - name: employees
+      - name: shippers

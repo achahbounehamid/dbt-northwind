@@ -1,6 +1,5 @@
 SELECT
 p.product_id,
-p.product_name,
 p.units_in_stock AS stock_restant,
 
 --calcule quantité-total vendu
@@ -18,5 +17,4 @@ ON p.product_id = od.product_id
 
 GROUP BY
 p.product_id,
-p.product_name,
 p.units_in_stock

@@ -2,7 +2,7 @@ SELECT
     customer_id,
 
     -- Nomber de commandes
-    COUNT(order_id) AS nb_commandes_total,
+    COUNT(order_id) AS nb_commandes,
 
     -- CA total
     SUM(montant_total) AS ca_total,
@@ -18,7 +18,7 @@ SELECT
         ELSE (MAX(order_date) - MIN(order_date))/(COUNT(order_id-1))
      END AS delai_moyen_entre_commandes   
 
-FROM {{ref('int_orders')}}
+FROM {{ref('int_orders_enriched')}}
 
 GROUP BY
    customer_id

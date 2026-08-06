@@ -3,6 +3,12 @@ SELECT
         order_id,
         customer_id,
         employee_id,
+        ship_via,
+        ship_city,
+        ship_country,
+        freight,
+
+
 -- Date typée
         CAST(order_date AS DATE) AS order_date,
         CAST(required_date AS DATE) AS required_date,

@@ -2,11 +2,17 @@ SELECT
     o.order_id,
     o.customer_id,
     o.employee_id,
+    o.ship_via,
     o.order_date,
     o.required_date,
     o.shipped_date,
+    o.ship_city,
+     o.ship_country,
+     o.freight,
+     o.is_shipped,
+     
     
-  -- Calculs de la ponctualité
+    -- Calculs de la ponctualité
     o.shipped_date - o.order_date AS delai_livraison_jours,
     
     CASE 
@@ -25,9 +31,19 @@ LEFT JOIN {{ ref('stg_order_details') }} od
     ON o.order_id = od.order_id
 
 GROUP BY 
+   
     o.order_id,
     o.customer_id,
     o.employee_id,
+    o.ship_via,
     o.order_date,
     o.required_date,
-    o.shipped_date
+    o.shipped_date,
+    o.ship_city,
+     o.ship_country,
+     o.freight,
+     o.is_shipped,
+     delai_livraison_jours,
+     is_on_time
+     
+    

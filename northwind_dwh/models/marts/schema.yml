@@ -1,27 +1,62 @@
 version: 2.2
 
 models:
+  # --- fact_orders ---
   - name: fact_orders
+    description: "Table de faits centrale contenant la liste des commandes et leurs montants."
     columns:
       - name: order_id
+        description: "Identifiant unique de la commande."
         tests:
           - unique
           - not_null
 
       - name: customer_id
+        description: "Cle etrangere vers le client (dim_customers)."
         tests:
           - relationships:
               to: ref('dim_customers')
               field: customer_id
 
       - name: employee_id
+        description: "Clé étrangère vers l'employé ayant géré la commande (dim_employees)."
         tests:
           - relationships:
               to: ref('dim_employees')
               field: employee_id
 
       - name: ship_via
+        description: "Clé étrangère vers le transporteur (dim_shippers)."
         tests:
           - relationships:
               to: ref('dim_shippers')
               field: shipper_id
+
+      - name: montant_total
+        description: "Montant total brut de la commande hors frais."
+        tests:
+          - not_null
+
+      - name: freight
+        description: "Frais de livraison associes a la commande."
+        tests:
+          - not_null
+
+  # --- dim_products ---
+  - name: dim_products
+    description: "Dimension des produits vendus avec leur classification par gamme."
+    columns:
+      - name: product_id
+        description: "Identifiant unique du produit."
+        tests:
+          - unique
+          - not_null
+
+      - name: gamme
+        description: "Niveau de gamme du produit (Entree de gamme, Milieu de gamme, Premium)."
+        tests:
+          - accepted_values:
+              values:
+                - 'Entree de gamme'
+                - 'Milieu de gamme'
+                - 'Premium'

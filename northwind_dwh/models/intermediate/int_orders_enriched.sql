@@ -7,9 +7,9 @@ SELECT
     o.required_date,
     o.shipped_date,
     o.ship_city,
-     o.ship_country,
-     o.freight,
-     o.is_shipped,
+    o.ship_country,
+    o.freight,
+    o.is_shipped,
      
     
     -- Calculs de la ponctualité
@@ -40,10 +40,10 @@ GROUP BY
     o.required_date,
     o.shipped_date,
     o.ship_city,
-     o.ship_country,
-     o.freight,
-     o.is_shipped,
-     delai_livraison_jours,
-     is_on_time
+    o.ship_country,
+    o.freight,
+    o.is_shipped,
+    delai_livraison_jours,
+    is_on_time
      
     

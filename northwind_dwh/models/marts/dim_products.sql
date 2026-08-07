@@ -11,7 +11,7 @@ SELECT
     supplier_country,
 
 CASE
-WHEN unit_price < 20 THEN 'Entrée de gamme'
+WHEN unit_price < 20 THEN 'Entree de gamme'
 WHEN unit_price BETWEEN 20 AND 50 THEN 'Milieu de gamme'
 ELSE 'Premium'
 END AS gamme

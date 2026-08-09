@@ -49,9 +49,9 @@ dbt docs serve
 ##  Livrables & Preuves d'exécution
 
 ### 1. Validation `dbt build`
-![dbt build success](./dbt-build.png)
+![dbt build success](../northwind_dwh/img/dbt-build.png)
 > **Explication :** La commande `dbt build` confirme la création réussie de tous les modèles (6 tables et 14 vues) ainsi que le passage au vert des **26 tests de qualité** (unicité, non-nullité et intégrité référentielle).
 
 ### 2. Lineage Graph 
-![Lineage Graph](./Lineage-Graph.png)
+![Lineage Graph](../northwind_dwh/img/Lineage-Graph.png)
 > **Explication :** Ce graphe interactif issu de `dbt docs` illustre le flux de transformation des données Northwind, depuis les tables sources jusqu'aux modèles intermédiaires et marts analytiques.

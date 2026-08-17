@@ -65,18 +65,12 @@ models:
   - name: stg_order_details
     description: "Description de la table de detail des commandes"
     columns:
-        tests:
-          -dbt_utils.unique_combination_of_columns:
-            combination_of_columns:
-              - order_id
-              - product_id
-    columns:
       - name: order_id
         description: "Identifiant de la commande"
         tests:
           - not_null
       - name: product_id
-        description: "Identifiant du produit."
+        description: "Identifiant du produit"
         tests:
           - not_null
 
